@@ -6,7 +6,7 @@ import cucumber.api.java.en.And;
 public class LoginSteps {
     @And("^I select Login button$")
     public void iSelectLoginButton() throws Throwable {
-        selectLoginButton()
+        selectLoginButton();
     }
 
     @And("^I enter Login Email$")
