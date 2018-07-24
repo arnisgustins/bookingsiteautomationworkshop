@@ -52,6 +52,11 @@ public class SignupSteps {
         enterPassword2();
     }
 
+    @And("^I try to Sign Up$")
+    public void iTryToSignUp() throws Throwable {
+        tryToSignUp();
+    }
+
     @Then("^user account page is opened$")
     public void userAccountPageIsOpened() throws Throwable {
         System.out.println("ACCOUNT CREATED");
