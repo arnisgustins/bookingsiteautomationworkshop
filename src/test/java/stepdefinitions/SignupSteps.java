@@ -5,60 +5,46 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import general.User;
+import pages.signup.SignUpPageObject;
+
+import static utils.RandomGenerator.*;
 
 public class SignupSteps {
-    @Given("^I have opened homepage$")
-    public void iHaveOpenedHomepage() throws Throwable {
-        System.out.println("OPEN HOMEPAGE");
-    }
 
-    @When("^I select My Account menu$")
-    public void iSelectMyAccountMenu() throws Throwable {
-        selectMyAccountMenu();
-    }
-
-    @And("^I select Sign up button$")
-    public void iSelectSignUpButton() throws Throwable {
-        selectSignUpButton();
-    }
-
+    private SignUpPageObject signup = new SignUpPageObject();
+    private User user = new User();
+    private User user2 = new User();
+;
     @And("^I enter First name$")
     public void iEnterFirstName() throws Throwable {
-        enterFirstName();
+        signup.enterFirstName();
     }
 
     @And("^I enter Last name$")
     public void iEnterLastName() throws Throwable {
-        enterLastName();
+        signup.enterLastName(generateRandomString());
     }
 
     @And("^I enter Mobile number$")
     public void iEnterMobileNumber() throws Throwable {
-        enterNumber();
+        signup.enterMobileNumber(generateRandomMobileNumber());
     }
 
     @And("^I enter Email address$")
     public void iEnterEmailAddress() throws Throwable {
-        enterEmail();
+        signup.enterEmail(generateRandomEmail());
     }
 
     @And("^I enter Password$")
     public void iEnterPassword() throws Throwable {
-        enterPassword();
+        signup.enterPassword(generateRandomString());
     }
 
     @And("^I confirm Password$")
     public void iConfirmPassword() throws Throwable {
-        enterPassword2();
+        signup.enterConfirmationPassword(generateRandomString());
     }
 
-    @And("^I try to Sign Up$")
-    public void iTryToSignUp() throws Throwable {
-        tryToSignUp();
-    }
-
-    @Then("^user account page is opened$")
-    public void userAccountPageIsOpened() throws Throwable {
-        System.out.println("ACCOUNT CREATED");
-    }
+    // And i create new account
 }
