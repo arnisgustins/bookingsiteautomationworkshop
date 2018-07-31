@@ -1,6 +1,7 @@
 package pages.header;
 
 import com.codeborne.selenide.SelenideElement;
+import pages.login.LoginPageObject;
 import pages.signup.SignUpPageObject;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -16,13 +17,22 @@ public class NavigationPageObject {
         return $("test");
     }
 
+    private SelenideElement getLoginButton() {
+        return $("test");
+    }
+
     public void selectMyAccountButton() {
         getMyAcountButton().click();
     }
 
-    public SignUpPageObject selectSignUpButton () {
+    public SignUpPageObject selectSignUpButton() {
         getSignUpButton().click();
         return page(SignUpPageObject.class);
+    }
+
+    public LoginPageObject selectLoginButton() {
+        getLoginButton().click();
+        return page(LoginPageObject.class);
     }
 }
 

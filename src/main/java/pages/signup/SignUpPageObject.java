@@ -32,7 +32,7 @@ public class SignUpPageObject {
         return $("test");
     }
 
-    private SelenideElement getSignupButton() {
+    private SelenideElement getSignUpButton() {
         return $("test");
     }
 
@@ -61,7 +61,7 @@ public class SignUpPageObject {
     }
 
     public AccountPageObject selectSignupButton() {
-        getSignupButton().click();
+        getSignUpButton().click();
         return page(AccountPageObject.class);
     }
 }

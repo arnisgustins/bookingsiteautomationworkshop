@@ -24,6 +24,11 @@ public class HomepageSteps {
         homepage.selectSignUpButton();
     }
 
+    @And("^I select Login button$")
+    public void iSelectLoginButton() throws Throwable {
+        homepage.selectLoginButton();
+    }
+
 
 
 
