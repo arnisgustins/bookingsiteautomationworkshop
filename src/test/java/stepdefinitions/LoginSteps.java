@@ -2,25 +2,31 @@ package stepdefinitions;
 
 import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
+import general.User;
+import pages.login.LoginPageObject;
 
 public class LoginSteps {
-    @And("^I select Login button$")
-    public void iSelectLoginButton() throws Throwable {
-        selectLoginButton();
-    }
 
-    @And("^I enter Login Email$")
+
+    private LoginPageObject login = new LoginPageObject();
+    private User existingUser = new User("Existing", "User");
+
+
+
+    @And("^I enter existing Email$")
     public void iEnterLoginEmail() throws Throwable {
-        enterLoginEmail();
+        existingUser.setEmail("email@email.com");
+        login.enterExistingEmail(existingUser.getEmail());
     }
 
-    @And("^I enter Login Password$")
+    @And("^I enter existing Password$")
     public void iEnterLoginPassword() throws Throwable {
-        enterLoginPassword();
+        existingUser.setPassword("password");
+        login.enterExistingPassword(existingUser.getPassword());
     }
 
     @And("^I try to Login$")
     public void iTryToLogin() throws Throwable {
-        tryToLogin();
+        login.selectLoginButton();
     }
 }
