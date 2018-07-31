@@ -1,6 +1,7 @@
 package pages.login;
 
 import com.codeborne.selenide.SelenideElement;
+import com.sun.jna.platform.win32.Advapi32Util;
 import pages.account.AccountPageObject;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -10,15 +11,19 @@ public class LoginPageObject {
 
 
     private SelenideElement getExistingEmailField() {
-        return $("test");
+        return $("input[name='username']");
     }
 
     private SelenideElement getExistingPasswordField() {
-        return $("test");
+        return $("input[name='password']");
     }
 
     private SelenideElement getLoginButton() {
-        return $("test");
+        return $(".loginbtn");
+    }
+
+    private SelenideElement getUserAccountButton(String username) {
+        return $("//nav/");
     }
 
     public void enterExistingEmail(String email) {
@@ -33,6 +38,8 @@ public class LoginPageObject {
         getLoginButton().click();
         return page(AccountPageObject.class);
     }
+
+    public AccountPageObject
 
 }
 
