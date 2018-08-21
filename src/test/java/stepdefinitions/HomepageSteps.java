@@ -4,6 +4,8 @@ package stepdefinitions;
 import cucumber.api.java.en.Given;
 import general.TestContext;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 public class HomepageSteps {
 
     private TestContext test;
@@ -14,7 +16,10 @@ public class HomepageSteps {
 
     @Given("^I have opened homepage$")
     public void iHaveOpenedHomepage() {
-        System.out.println("OPEN HOMEPAGE");
+        test.getNavigationPage().waitUntilPageLoadingIsFinished();
+
+        assertThat(test.getNavigationPage().isLogoVisible()).isTrue();
+        assertThat(test.getNavigationPage().isMyAccountButtonVisible()).isTrue();
     }
 
 }
