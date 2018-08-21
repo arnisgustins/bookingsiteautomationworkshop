@@ -1,22 +1,22 @@
+
 Feature: This feature is about creating new account in the system
 
-  @TEST
-  Scenario: Successfull sign-up
+  Scenario: Successful sign-up
     Given I have opened homepage
-    When I select My Account menu
-      And I select Sign up button
+    When I select My Account button in Navigation bar
+      And I select Sign Up button in Navigation bar
       And I enter First name
       And I enter Last name
       And I enter Mobile number
       And I enter Email address
       And I enter Password
       And I confirm Password
-      And I try to Sign Up
+      And I select Sign Up button
     Then user account page is opened
 
-  Scenario: Unsuccessfull sign-up
+  Scenario: Unsuccessful sign-up
     Given I have opened homepage
-    When I select My Account menu
-      And I select Sign up button
-      And I try to Sign Up
+    When I select My Account button in Navigation bar
+      And I select Sign Up button in Navigation bar
+      And I select Sign Up button
     Then user account page is opened

@@ -6,12 +6,14 @@ import cucumber.api.java.Before;
 import static com.codeborne.selenide.Selenide.close;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.CHROME;
+import static com.codeborne.selenide.WebDriverRunner.FIREFOX;
+import static org.openqa.selenium.remote.BrowserType.ANDROID;
 
 public class Hooks {
 
     @Before
     public void launchBrowser() {
-        System.setProperty("selenide.browser", CHROME);;
+        System.setProperty("selenide.browser", CHROME);
     }
 
     @Before
@@ -23,4 +25,5 @@ public class Hooks {
     public void closeBrowser() {
         close();
     }
+
 }

@@ -1,17 +1,15 @@
-Feature: This feature is about loging in
+Feature: This feature is about login in to existing account, to make sure it can be accessed and has all the correct data
 
-  Scenario: Successfull login
+  Scenario: Successful login
     Given I have opened homepage
-    When I select My Account menu
-      And I select Login button
-      And I enter existing Email
+      And I select My Account button in Navigation bar
+      And I select Sign Up button in Navigation bar
+      And I have created new account
+      And I select User Account button in Navigation bar
+      And I select Logout button in Navigation bar
+    When I select My Account button in Navigation bar
+      And I select Login button in Navigation bar
+      And I enter existing Email address
       And I enter existing Password
-      And I try to Login
-    Then user account page is opened
-
-  Scenario: Unsuccessfull login
-    Given I have opened homepage
-    When I select My Account menu
       And I select Login button
-      And I try to Login
     Then user account page is opened
