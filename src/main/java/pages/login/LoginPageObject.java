@@ -1,5 +1,6 @@
 package pages.login;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 import pages.account.AccountPageObject;
@@ -21,6 +22,10 @@ public class LoginPageObject {
         return $(By.xpath("//button[contains(text(), 'Login')]"));
     }
 
+    private SelenideElement getLoginFormTitle() {
+        return $(".panel-heading");
+    }
+
     public void enterEmail(String email) {
         getEmailField().sendKeys(email);
     }
@@ -33,5 +38,18 @@ public class LoginPageObject {
         getLoginButton().click();
         return page(AccountPageObject.class);
     }
+
+    public String getLoginFormTitleText() {
+        return getLoginFormTitle().getText();
+    }
+
+    public boolean isLoginButtonVisible() {
+        return getLoginButton().isDisplayed();
+    }
+
+    public void waitUntilLoginFormIsLoaded() {
+        getLoginButton().waitUntil(Condition.visible, 5000);
+    }
+
 
 }

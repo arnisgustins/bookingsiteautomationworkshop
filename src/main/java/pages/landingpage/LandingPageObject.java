@@ -48,6 +48,8 @@ public class LandingPageObject {
             return $(By.xpath("//form[@name = 'fCustomHotelSearch']/descendant::button[contains(text(), 'Search')]"));
         }
 
+
+
         public LandingPageObject selectBookingTypeButton(String type) {
             if (type.toUpperCase().equals("FLIGHTS")){
                 getBookingTypeButton(type.toLowerCase()).click();
