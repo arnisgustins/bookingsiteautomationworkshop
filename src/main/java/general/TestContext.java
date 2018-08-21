@@ -3,23 +3,33 @@ package general;
 import lombok.Data;
 import pages.account.AccountPageObject;
 import pages.header.NavigationPageObject;
+import pages.hoteldetails.ConfirmHotelBookingPageObject;
+import pages.hoteldetails.HotelDetailsPageObject;
+import pages.landingpage.LandingPageObject;
 import pages.login.LoginPageObject;
-import pages.signup.SignUpPageObject;
+import pages.singup.SignUpPageObject;
 
 @Data
 public class TestContext {
 
     private User user;
     private AccountPageObject accountPage;
-    private NavigationPageObject navigation;
+    private NavigationPageObject navigationPage;
+    private LandingPageObject landingPage;
     private LoginPageObject loginPage;
-    private SignUpPageObject signupPage;
+    private SignUpPageObject signUpPage;
+    private HotelDetailsPageObject hotelDetailPage;
+    private ConfirmHotelBookingPageObject confirmHotelBookingPage;
 
     public TestContext() {
-        this.user = new User();
-        this.accountPage = new AccountPageObject();
-        this.navigation = new NavigationPageObject();
-        this,loginPage = new LoginPageObject();
-        this.signupPage = new SignUpPageObject();
+        user = new User();
+        accountPage = new AccountPageObject();
+        navigationPage = new NavigationPageObject();
+        landingPage = new LandingPageObject();
+        loginPage = new LoginPageObject();
+        signUpPage = new SignUpPageObject();
+        hotelDetailPage = new HotelDetailsPageObject();
+        confirmHotelBookingPage = new ConfirmHotelBookingPageObject();
     }
+
 }

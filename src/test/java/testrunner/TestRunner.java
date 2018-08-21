@@ -1,3 +1,4 @@
+
 package testrunner;
 
 import cucumber.api.CucumberOptions;
@@ -8,7 +9,6 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = {"stepdefinitions"}
-        tags = {"@TEST"}
 )
-class TestRunner {
+public class TestRunner {
 }

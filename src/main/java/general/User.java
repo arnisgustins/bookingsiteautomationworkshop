@@ -10,14 +10,14 @@ public class User {
     private String firstName;
     private String lastName;
     private String mobileNumber;
-    private String email;
+    private String emailAddress;
     private String password;
 
     public User() {
         this.firstName = generateRandomString();
         this.lastName = generateRandomString();
-        this.mobileNumber = generateRandomMobileNumber();
-        this.email = generateRandomEmail();
+        this.mobileNumber = generateRandomPhoneNumber();
+        this.emailAddress = generateRandomEmail();
         this.password = generateRandomString();
     }
 
@@ -25,7 +25,5 @@ public class User {
         this.firstName = firstName;
         this.lastName = lastName;
     }
-
-
 
 }

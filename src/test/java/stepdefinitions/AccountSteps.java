@@ -13,10 +13,8 @@ public class AccountSteps {
     }
 
     @Then("^user account page is opened$")
-    public void userAccountPageIsOpened() throws Throwable {
-        System.out.println("ACCOUNT CREATED");
+    public void userAccountPageIsOpened() {
+        System.out.println("ACCOUNT CREATED!");
     }
-
-    @And()
 
 }

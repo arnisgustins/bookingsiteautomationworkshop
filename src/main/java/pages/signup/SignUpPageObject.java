@@ -1,6 +1,7 @@
-package pages.signup;
+package pages.singup;
 
 import com.codeborne.selenide.SelenideElement;
+import org.openqa.selenium.By;
 import pages.account.AccountPageObject;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -9,31 +10,31 @@ import static com.codeborne.selenide.Selenide.page;
 public class SignUpPageObject {
 
     private SelenideElement getFirstNameField() {
-        return $("input[name='firstname']");
+        return $("input[name = 'firstname']");
     }
 
     private SelenideElement getLastNameField() {
-        return $("input[name='lasttname']");
+        return $("input[name = 'lastname']");
     }
 
     private SelenideElement getMobileNumberField() {
-        return $("input[name='phone']");
+        return $("input[name = 'phone']");
     }
 
     private SelenideElement getEmailField() {
-        return $("input[name='email']");
+        return $("input[name = 'email']");
     }
 
     private SelenideElement getPasswordField() {
-        return $("input[name='password']");
+        return $("input[name = 'password']");
     }
 
     private SelenideElement getConfirmPasswordField() {
-        return $("input[name='confirmpassword']");
+        return $("input[name = 'confirmpassword']");
     }
 
     private SelenideElement getSignUpButton() {
-        return $(".btn-lg");
+        return $(By.xpath("//button[contains(text(), 'Sign Up')]"));
     }
 
     public void enterFirstName(String firstname) {
@@ -60,8 +61,9 @@ public class SignUpPageObject {
         getConfirmPasswordField().sendKeys(password);
     }
 
-    public AccountPageObject selectSignupButton() {
+    public AccountPageObject selectSignUpButton() {
         getSignUpButton().click();
         return page(AccountPageObject.class);
     }
+
 }

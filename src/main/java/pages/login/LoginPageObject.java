@@ -1,7 +1,7 @@
 package pages.login;
 
 import com.codeborne.selenide.SelenideElement;
-import com.sun.jna.platform.win32.Advapi32Util;
+import org.openqa.selenium.By;
 import pages.account.AccountPageObject;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -9,29 +9,24 @@ import static com.codeborne.selenide.Selenide.page;
 
 public class LoginPageObject {
 
-
-    private SelenideElement getExistingEmailField() {
-        return $("input[name='username']");
+    private SelenideElement getEmailField() {
+        return $("input[name = 'username']");
     }
 
-    private SelenideElement getExistingPasswordField() {
-        return $("input[name='password']");
+    private SelenideElement getPasswordField() {
+        return $("input[name = 'password']");
     }
 
     private SelenideElement getLoginButton() {
-        return $(".loginbtn");
+        return $(By.xpath("//button[contains(text(), 'Login')]"));
     }
 
-    private SelenideElement getUserAccountButton(String username) {
-        return $("//nav/");
+    public void enterEmail(String email) {
+        getEmailField().sendKeys(email);
     }
 
-    public void enterExistingEmail(String email) {
-        getExistingEmailField().sendKeys(email);
-    }
-
-    public void enterExistingPassword(String password) {
-        getExistingPasswordField().sendKeys(password);
+    public void enterPassword(String password) {
+        getPasswordField().sendKeys(password);
     }
 
     public AccountPageObject selectLoginButton() {
@@ -39,7 +34,4 @@ public class LoginPageObject {
         return page(AccountPageObject.class);
     }
 
-    public AccountPageObject
-
 }
-
